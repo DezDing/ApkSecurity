@@ -17,13 +17,13 @@ echo "platform is invalid!";
 exit
 fi
 
-echo "pls select target :scdev(四川测试版本) scprod(四川生产版本）jsdev（江苏测试版本） jsprod(江苏生产版本)"
+echo "pls select target :scdev(四川测试版本) scprod(四川生产版本）jsdev（江苏测试版本） jsprod(江苏生产版本) scpreprod(四川准生产) jspreprod(江苏准生产)"
 read target
 echo "starting to build $target $platform"
 debug_release=debug
 case $target in scdev|jsdev)
 debug_release=debug;;
-scprod|jsprod)
+scprod|jsprod|scpreprod|jspreprod)
 debug_release=release;;
 *)
 echo "target version invalid"
